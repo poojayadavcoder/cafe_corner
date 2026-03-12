@@ -3,7 +3,6 @@ import { useTheme } from "../hooks/useTheme";
 import { useCafeDetail } from "../hooks/useCafeDetail";
 
 import DetailHero from "../components/CafeDetail/DetailHero";
-import VibeCheck from "../components/CafeDetail/VibeCheck";
 import CafeInfo from "../components/CafeDetail/CafeInfo";
 import PhotoGallery from "../components/CafeDetail/PhotoGallery";
 import MenuSection from "../components/CafeDetail/MenuSection";
