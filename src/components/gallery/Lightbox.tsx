@@ -53,7 +53,7 @@ export default function Lightbox({
       </button>
 
       <div
-        className={`rounded-[3rem] lg:rounded-[4rem] overflow-hidden max-w-6xl w-full h-[80vh] sm:max-h-[60vh] md:max-h-[80vh] shadow-2xl flex flex-col sm:flex-row relative transition-colors duration-300 ${
+        className={`rounded-[3rem] lg:rounded-[4rem] overflow-hidden max-w-6xl w-full max-h-[60vh] sm:max-h-[60vh] md:max-h-[80vh] shadow-2xl flex flex-col sm:flex-row relative transition-colors duration-300 ${
           theme === "dark" ? "bg-gray-900" : "bg-white"
         }`}
         onClick={(e) => e.stopPropagation()}

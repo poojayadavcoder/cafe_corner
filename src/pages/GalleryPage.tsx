@@ -26,6 +26,14 @@ export default function GalleryPage() {
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
 
+  // Scroll to top on page or filter change
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [page, activeFilter]);
+
   const loadImages = useCallback(async () => {
     setLoading(true);
     setError(null);
@@ -79,13 +87,13 @@ export default function GalleryPage() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 -mt-3 -sm:mt-16 ${
+    <div className={`min-h-screen transition-colors duration-300 -mt-10 -sm:mt-16 ${
       theme === "dark" ? "bg-gray-950" : "bg-[#FFFDFB]"
     }`}>
 
       {/* HERO SECTION */}
 
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] lg:h-[70vh] flex items-center justify-center overflow-hidden">
 
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -104,9 +112,9 @@ export default function GalleryPage() {
             Visual Inspiration
           </span>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 monFont tracking-tight">
-            Cafe Mood <span className="text-[#E67E22]">Gallery</span>
-          </h1>
+          <h1 className="mb-4 md:mb-6 text-5xl sm:text-6xl text-white lg:text-7xl font-semibold tracking-tight leading-[1.2] monFont">
+          Cafe Mood <span className="text-[#E67E22]">Gallery</span>
+        </h1>
 
           <p className="text-white/80 max-w-xl mx-auto text-lg font-medium leading-relaxed">
             A curated collection of the most beautiful cafe corners, artisan beans, and cozy vibes to inspire your next visit.
@@ -190,7 +198,6 @@ export default function GalleryPage() {
                       disabled={page <= 1 || loading}
                       onClick={() => {
                         setPage((p) => p - 1);
-                        window.scrollTo({ top: 300, behavior: "smooth" });
                       }}
                       className={`px-6 py-3 rounded-xl border transition-all active:scale-95 disabled:opacity-50 ${
                         theme === "dark" 
@@ -211,7 +218,6 @@ export default function GalleryPage() {
                       disabled={page >= totalPages || loading}
                       onClick={() => {
                         setPage((p) => p + 1);
-                        window.scrollTo({ top: 300, behavior: "smooth" });
                       }}
                       className={`px-6 py-3 rounded-xl border transition-all active:scale-95 disabled:opacity-50 ${
                         theme === "dark" 

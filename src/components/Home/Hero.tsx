@@ -19,7 +19,7 @@ export default function Hero({ setSearchQuery, searchQuery }: HeroProps) {
 
   return (
     <section
-      className="relative flex items-center justify-center h-[120vh] -mt-6 md:-mt-16 bg-cover bg-center"
+      className="relative flex items-center justify-center h-[80vh] sm:h-[120vh] -mt-6 md:-mt-16 bg-cover bg-center"
       style={{ backgroundImage: `url(${heroImg})` }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />

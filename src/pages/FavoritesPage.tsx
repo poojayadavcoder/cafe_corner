@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { fetchCafeById } from "../services/cafesApi";
 import { useFavorites } from "../context/FavoritesContext";
 import type { Cafe } from "../types/cafeTypes";
@@ -19,6 +19,17 @@ export default function FavoritesPage() {
   const [retryCount, setRetryCount] = useState(0);
 
   const { favorites, toggleFavorite, atLimit } = useFavorites();
+  const prevFavLength = useRef(favorites.length);
+
+  // Scroll to top when an item is removed
+  useEffect(() => {
+    if (favorites.length < prevFavLength.current) {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }
+    prevFavLength.current = favorites.length;
+  }, [favorites.length]);
 
   useEffect(() => {
     if (!favorites.length) {
@@ -59,12 +70,14 @@ export default function FavoritesPage() {
   }, [favorites, retryCount]);
 
   const handleRemove = useCallback(
-    (id: string) => toggleFavorite(id),
+    (id: string) => {
+      toggleFavorite(id);
+    },
     [toggleFavorite]
   );
 
   return (
-    <div className={`min-h-screen pb-32 transition-colors duration-300 ${
+    <div className={`min-h-screen pb-15 transition-colors duration-300 ${
       theme === "dark" ? "bg-gray-950" : "bg-[#FFF4E6]"
     }`}>
 

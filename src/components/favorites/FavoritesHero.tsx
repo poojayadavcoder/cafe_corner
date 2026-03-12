@@ -6,15 +6,14 @@ import { useTheme } from "../../hooks/useTheme";
 export default function FavoritesHero() {
   const { theme } = useTheme();
   return (
-    <section className="relative h-[450px] flex items-center justify-center text-center overflow-hidden -mt-6 -sm:mt-16">
+    <section className="relative h-[450px] flex items-center justify-center text-center overflow-hidden -mt-10 -sm:mt-16">
 
       <div
         className="absolute inset-0 bg-cover bg-center scale-105 animate-slow-zoom"
         style={{ backgroundImage: `url(${twoCups})` }}
       />
 
-<div className="absolute inset-0 bg-black/50" />
-
+      <div className="absolute inset-0 bg-black/50" />
 
 <div className={`absolute inset-0 transition-colors duration-300 bg-gradient-to-b ${
   theme === "dark" 
@@ -32,7 +31,8 @@ export default function FavoritesHero() {
             Saved Cafés
           </span>
 
-        <h1 className="text-6xl drop-shadow-[0_5px_20px_rgba(0,0,0,0.6)] text-white font-semibold monFont">
+        
+          <h1 className="mb-4 md:mb-6 text-5xl sm:text-6xl text-white lg:text-7xl font-semibold tracking-tight leading-[1.2] monFont">
           Your Favorite <span className="text-[#E67E22]">Cafés</span>
         </h1>
 

@@ -5,7 +5,7 @@ export default function EmptyState() {
   const { theme } = useTheme();
 
   return (
-    <div className="text-center py-13">
+    <div className="text-center sm:py-13">
 
       <img
         src={cupIllustration}
