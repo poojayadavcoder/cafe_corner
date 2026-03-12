@@ -120,17 +120,19 @@ Interactive location-based discovery powered by advanced mapping.
 
 ## ⚠️ Known Issues & Limitations
 - **API Rate Limits**: The free tier of Geoapify may limit the number of searches per day.
+- **Category Filtering**: Current Geoapify API does not support extensive category-based filtering, making it difficult to implement native "Filter by Category" features. Other APIs were considered, but none met all project requirements simultaneously.
 - **Image Variety**: Occasional generic images if specific cafe photos aren't available through the image API.
 - **Offline Map**: Map tiles require an active internet connection to load.
 
 ---
 
 ## 🗺️ Roadmap & Future Improvements
+- [ ] **Custom Backend**: Build a robust API using **Node.js and Express** to provide better data control, custom filtering, and bypass third-party API limitations.
 - [ ] **User Authentication**: Allow users to sync favorites across devices.
+- [ ] **Enhanced UI**: Further polish the interface and interactivity leveraging a custom backend.
 - [ ] **Reviews & Ratings**: Implement a custom rating system for users to leave feedback.
 - [ ] **Booking Integration**: Add the ability to reserve tables directly from the app.
 - [ ] **PWA Support**: Make the app installable for a better mobile experience.
-- [ ] **Advanced Filtering**: Filter by "Quiet Level", "WiFi Speed", and "Vegan Options".
 
 ---
 
