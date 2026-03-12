@@ -12,6 +12,7 @@ export default function Header() {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Mood Gallery", path: "/gallery" },
+    { name: "Nearby", path: "/nearby" },
     { name: "Favorites", path: "/favorites", icon: <FaHeart className="w-4 h-4" /> },
   ];
 

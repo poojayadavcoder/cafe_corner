@@ -10,6 +10,15 @@ interface DetailHeroProps {
 export default function DetailHero({ image, name }: DetailHeroProps) {
   const { theme } = useTheme();
 
+   const handleShare = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      alert("Cafe link copied! You can share it.");
+    } catch (err) {
+      console.error("Failed to copy link", err);
+    }
+  };
+
   return (
     <div className="relative h-[75vh] w-full overflow-hidden">
       <img
@@ -26,6 +35,7 @@ export default function DetailHero({ image, name }: DetailHeroProps) {
       />
 
       <div className="absolute top-28 left-4 md:left-12 z-20">
+      <div className="flex justify-center items-center gap-3 mb-6">
         <Link
           to="/"
           className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-5 py-2.5 rounded-2xl font-bold text-sm transition-all border border-white/20 group"
@@ -33,6 +43,15 @@ export default function DetailHero({ image, name }: DetailHeroProps) {
           <HiArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           Back to feed
         </Link>
+
+        
+        <button
+          onClick={handleShare}
+          className="bg-[#E67E22] cursor-pointer text-white px-4 py-2 rounded-lg hover:opacity-90 transition"
+        >
+          Share Cafe
+        </button>
+      </div>
       </div>
     </div>
   );

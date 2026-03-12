@@ -4,8 +4,6 @@ import { useTheme } from "../../hooks/useTheme";
 const CATEGORIES = [
   "All",
   "Coffee",
-  "Tea",
-  "Free WiFi",
   "Outdoor Seating",
   "Cozy"
 ];

@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage.tsx';
 import CafeDetailPage from './pages/CafeDetailPage.tsx';
 import FavoritesPage from './pages/FavoritesPage.tsx';
 import GalleryPage from './pages/GalleryPage.tsx';
+import NearbyCafesPage from './pages/NearbyCafesPage.tsx';
 import NotFoundPage from './pages/NotFoundPage.tsx';
 
 import { FavoritesProvider } from "./context/FavoritesContext";
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: "/cafes/:id", element: <CafeDetailPage /> },
       { path: "/favorites", element: <FavoritesPage />  },
       { path: "/gallery",   element: <GalleryPage />    },
+      { path: "/nearby",    element: <NearbyCafesPage /> },
       { path: "*",          element: <NotFoundPage />   },
     ]
   }

@@ -43,7 +43,8 @@ export default function CafeDetailPage() {
     <div className={`min-h-screen transition-colors duration-300 -mt-16 ${bgColor}`}>
       <DetailHero image={cafe.image} name={cafe.name} />
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 pb-32">
+      <div className="max-w-7xl  mx-auto px-4 md:px-8 pb-32">
+       
         <div className="relative z-20 -mt-40 grid grid-cols-1 lg:grid-cols-12 gap-10">
 
 

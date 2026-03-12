@@ -87,13 +87,13 @@ export default function GalleryPage() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 -mt-10 -sm:mt-16 ${
+    <div className={`min-h-screen transition-colors duration-300 -mt-3 -sm:mt-16 ${
       theme === "dark" ? "bg-gray-950" : "bg-[#FFFDFB]"
     }`}>
 
       {/* HERO SECTION */}
 
-      <section className="relative h-[50vh] lg:h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[55vh] lg:h-[70vh] flex items-center justify-center overflow-hidden">
 
         <div
           className="absolute inset-0 bg-cover bg-center"
